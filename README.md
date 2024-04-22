@@ -17,20 +17,3 @@ URL ```amqp://guest:guest@localhost:5672``` memiliki kesamaan dengan subscriber 
 ![alt text](assets/images/terminal-subscriber.png)
 #### foto terminal publisher
 ![alt text](assets/images/terminal-publisher.png)
-#### foto rabbitmq setelah dijalankan cargo run
-![alt text](assets/images/rabbitmq-test.png)
-Penjelasan: Screenshot interface RabbitMQ dimana ada spike pada message rates karena saya menjalankan publisher berkali-kali. Spike pada chart menandakan bahwa saya telah menjalankan program publisher dan subscriber menerima messages dari publisher
-
-
-#### Reflection dan foto Running at least three subscriber
-![alt text](assets/images/1.png) 
-![alt text](assets/images/2.png) 
-![alt text](assets/images/3.png) 
-![alt text](assets/images/4.png) 
-![alt text](assets/images/5.png)    
-Screenshot ketika saya menjalankan cargo run sebanyak 3 kali pada publisher. Dapat terlihat bahwa spike dari message queue berkurang yang menandakan lebih cepat daripada sebelumnya karena request yang diterima queue akan ditugaskan kepada 3 subscriber instance yang jalan sehingga masing" subscriber menghandle 5 object subscriber
-
-Beberapa code yang dapat di improve adalah,
-
-Hindari menggunakan unwrap() sebab menggunakan unwrap() pada kode produksi tidak disarankan karena dapat menyebabkan program panic jika Result adalah Err. Sebagai gantinya, kita dapat menangani kesalahan secara elegan menggunakan match atau if let.
-Gunakan konstanta untuk string yang diulang sebab jika kita memiliki string yang digunakan beberapa kali (seperti amqp://guest:guest@localhost:5672), lebih baik mendefinisikannya sebagai konstanta di bagian atas file.
