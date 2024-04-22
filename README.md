@@ -13,3 +13,7 @@ URL ```amqp://guest:guest@localhost:5672``` memiliki kesamaan dengan subscriber 
 
 #### foto rabbitmq
 ![alt text](assets/images/rabbitmq.png)
+#### foto terminal subscriber
+![alt text](assets/images/terminal-subscriber.png)
+#### foto terminal publisher
+![alt text](assets/images/terminal-publisher.png)
